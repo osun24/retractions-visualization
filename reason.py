@@ -29,7 +29,7 @@ with open('retractions.csv', 'r', encoding='ISO-8859-1') as file:
                 reason = reason.strip()
                 
                 # If the reason is already in the dictionary, add 1 to the count
-                if reason in retractions_by_reason:
+                if reason in retractions_by_reason and reason != "Upgrade/Update of Prior Notice":
                     retractions_by_reason[reason] += 1
                 # If the reason is not in the dictionary, set the count to 1
                 else:

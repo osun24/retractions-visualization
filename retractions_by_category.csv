@@ -1,0 +1,108 @@
+Reason,Retractions,category
+Investigation by Journal/Publisher,13434,investigation
+Notice - Limited or No Information,11054,unknown
+Unreliable Results,8887,reliability
+Concerns/Issues About Data,8143,reliability
+Investigation by Third Party,7416,investigation
+Date of Retraction/Other Unknown,6190,unknown
+Concerns/Issues about Referencing/Attributions,6139,ethical
+Concerns/Issues with Peer Review,5161,peer review
+Breach of Policy by Author,4730,ethical
+Fake Peer Review,4652,peer review
+Paper Mill,3897,paper mill
+Concerns/Issues About Results,3877,reliability
+Withdrawal,3773,other
+Duplication of Image,3729,reliability
+Randomly Generated Content,3440,reliability
+Duplication of Article,3270,journal
+Euphemisms for Plagiarism,2881,ethical
+Investigation by Company/Institution,2713,investigation
+Plagiarism of Article,2459,ethical
+Plagiarism of Text,2148,ethical
+Misconduct by Author,1765,ethical
+Error in Data,1686,reliability
+Rogue Editor,1621,other
+Falsification/Fabrication of Data,1611,ethical
+Concerns/Issues About Image,1599,reliability
+Original Data not Provided,1591,reliability
+Unreliable Data,1472,reliability
+Lack of IRB/IACUC Approval,1452,other
+Misconduct - Official Investigation/Finding,1439,ethical
+Author Unresponsive,1411,other
+Concerns/Issues About Authorship,1394,ethical
+Error in Results and/or Conclusions,1312,reliability
+Error in Analyses,1219,reliability
+Manipulation of Images,1117,ethical
+Error in Methods,1056,reliability
+Euphemisms for Duplication,928,other
+Objections by Author(s),878,other
+Retract and Replace,874,other
+Results Not Reproducible,846,reliability
+Notice - No/Limited Information,831,unknown
+False/Forged Authorship,820,ethical
+Error in Image,741,reliability
+Objections by Third Party,734,other
+Duplicate Publication through Error by Journal/Publisher,719,journal
+Error by Journal/Publisher,710,journal
+Copyright Claims,665,ethical
+Error in Text,644,reliability
+Ethical Violations by Author,641,ethical
+Duplication of Data,627,reliability
+Informed/Patient Consent - None/Withdrawn,611,ethical
+Lack of Approval from Author,527,other
+Withdrawn to Publish in Different Journal,494,journal
+Falsification/Fabrication of Image,490,ethical
+Concerns/Issues about Third Party Involvement,472,other
+Duplication of Text,449,other
+Plagiarism of Image,418,ethical
+Concerns/Issues about Human Subject Welfare,417,other
+Conflict of Interest,391,other
+Withdrawn (out of date),361,other
+Lack of Approval from Third Party,340,other
+Notice - Lack of,333,other
+Taken from Dissertation/Thesis,313,ethical
+Plagiarism of Data,310,ethical
+Investigation by ORI,279,investigation
+Lack of Approval from Company/Institution,256,other
+Unreliable Image,196,reliability
+Notice - Unable to Access via current resources,178,other
+Error in Materials (General),176,reliability
+False Affiliation,135,ethical
+Doing the Right Thing,135,other
+Cites Retracted Work,129,other
+Contamination of Cell Lines/Tissues,118,other
+Falsification/Fabrication of Results,111,ethical
+Legal Reasons/Legal Threats,98,other
+Miscommunication by Author,92,other
+Bias Issues or Lack of Balance,87,other
+Error in Cell Lines/Tissues,82,reliability
+Publishing Ban,81,other
+Complaints about Author,75,other
+Criminal Proceedings,72,other
+Contamination of Materials (General),63,other
+Temporary Removal,51,other
+Misconduct by Third Party,43,ethical
+Transfer of Copyright/Ownership,41,other
+Error by Third Party,40,reliability
+Manipulation of Results,40,ethical
+Ethical Violations by Third Party,29,ethical
+Civil Proceedings,28,other
+Salami Slicing,26,other
+Objections by Company/Institution,26,other
+Updated to Retraction,23,other
+Euphemisms for Misconduct,22,ethical
+Taken via Peer Review,20,ethical
+Not Presented at Conference,20,other
+Miscommunication by Journal/Publisher,18,journal
+Contamination of Reagents,18,other
+Hoax Paper,15,other
+Miscommunication by Third Party,12,other
+Nonpayment of Fees/Refusal to Pay,10,other
+Miscommunication by Company/Institution,10,other
+Concerns/Issues about Animal Welfare,9,other
+Misconduct by Company/Institution,8,ethical
+Complaints about Third Party,7,other
+No Further Action,7,other
+Updated to Correction,4,other
+Complaints about Company/Institution,4,other
+Sabotage of Materials,1,other
