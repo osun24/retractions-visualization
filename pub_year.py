@@ -19,6 +19,13 @@ with open('retractions.csv', 'r', encoding='ISO-8859-1') as file:
             # Convert the date to a year
             year = date.split('/')[2].split(' ')[0]
             
+            if (len(year) > 2):
+                year = year
+            elif int(year) > 24:
+                year = '19' + str(year)
+            else:
+                year = '20' + str(year)
+            
             if year in retractions_by_year:
                 retractions_by_year[year] += 1
             else:
