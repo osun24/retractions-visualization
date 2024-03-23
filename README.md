@@ -1,6 +1,9 @@
 # retractions-visualization
 A data visualization project for scientific paper retractions.
 
+# Poster 
+<img src="Retractions Through the Lens of Data - A Visualization.png">
+
 # Data Source
 * Retraction data (`retractions.csv`) sourced from the [Retraction Watch Database](http://retractiondatabase.org/RetractionSearch.aspx?) on March 21, 2024 through the [Crossref’s Labs API](https://www.crossref.org/blog/news-crossref-and-retraction-watch/).
 * Papers by country was sourced from the World Bank's DataBank on World Development Indicators for [scientific and technical journal articles](https://databank.worldbank.org/reports.aspx?dsid=2&series=IP.JRN.ARTC.SC#) on March 22, 2024.
