@@ -1,6 +1,6 @@
 # Sort into ethical issues, data/results reliability, procedural issues, investigation, and other
 import pandas as pd
-import csv
+import csv, re
 
 # Define the categories - dictionary is ordered, ranked by importance
 categories = {
@@ -9,22 +9,27 @@ categories = {
     "Contamination": ["Contamination"],
     "Journal Error" : ["Duplication of Article", "Duplicate Publication", "Error by Journal/Publisher", "Miscommunication by Journal/Publisher"],
     "Peer Review": ["Peer Review"],
-    "Reliability": ["Bias", "Randomly", "Error in Data", "Falsification/Fabrication", "Results", "Unreliable", "Concerns/Issues About Image", "Error in Image", "Error by Third Party", "Error in Analyses", "Error in Cell Lines/Tissues", "Error in Data", "Contamination", "Materials", "Error in Text", "Methods", "Cites Retracted", "Contamination", "Original Data not Provided", "Sabotage", "Concerns/Issues About Data", "Manipulation", "Peer Review", "Paper Mill", "Hoax Paper"],
-    "paper mill" : ["Paper Mill"],
-    "doing the right thing" : ["Doing the Right Thing"],
-    "unknown": ["Unknown", "Limited", "Information", "Unable", "Notice", "Notice – Lack of"]
+    "Paper Mill" : ["Paper Mill"],
+    "Doing the Right Thing" : ["Doing the Right Thing"],
+    "Unknown": ["Unknown", "Limited", "Information", "Unable", "Notice", "Notice – Lack of"],
+    "Reliability": ["Bias", "Randomly", "Error in Data", "Falsification/Fabrication", "Results", "Unreliable", "Concerns/Issues About Image", "Error in Image", "Error by Third Party", "Error in Analyses", "Error in Cell Lines/Tissues", "Error in Data", "Contamination", "Materials", "Error in Text", "Methods", "Cites Retracted", "Contamination", "Original Data not Provided", "Sabotage", "Concerns/Issues About Data", "Manipulation", "Peer Review", "Paper Mill", "Hoax Paper", "Retract and Replace", "Updated to Retraction", "False/Forged Authorship"],
 }
 
-# Function to categorize reasons
+# Categorize the reason based on the keywords with regex for exact word matching
 def categorize_reason(reason):
+    reason_lower = reason.lower()
     for category, keywords in categories.items():
-        if any(keyword in reason for keyword in keywords):
-            return category
+        for keyword in keywords:
+            if re.search(r'\b' + re.escape(keyword.lower()) + r'\b', reason_lower):
+                return category
     return "other"
 
+# Check for reliability with whole word matching
 def check_for_reliability(reason):
-    if any(keyword in reason for keyword in categories["Reliability"]):
-        return True
+    reason_lower = reason.lower()
+    for keyword in categories["Reliability"]:
+        if re.search(r'\b' + re.escape(keyword.lower()) + r'\b', reason_lower):
+            return True
     return False
 
 # Categorize each retraction by category
@@ -36,25 +41,22 @@ retractions = pd.read_csv('retractions.csv', encoding='ISO-8859-1')
 # Create a dictionary to store the number of retractions by category
 retractions_by_category = {}
 
+# Specific details for each retraction
+retractions_with_details = {}
+
 # Loop through the rows of the file
 for index, row in retractions.iterrows():
     if row['RetractionNature'] == 'Retraction':
         # Get the reasons like "+Concerns/Issues about Referencing/Attributions;+Concerns/Issues with Peer Review;+Investigation by Journal/Publisher;+Rogue Editor;+Unreliable Results;"
-        reasons = row['Reason']
+        reasons = row['Reason'].split(';')
 
-        # Split the reasons into a list
-        reasons = reasons.split(';')
-
+        # Prevent duplicate counting
         added_to_categories = []
 
         # Loop through the reasons
         for reason in reasons:
-
-            # Remove the '+' from the reasons
-            reason = reason.replace('+', '')
-
-            # Remove the leading and trailing whitespace
-            reason = reason.strip()
+            # Remove the '+' from the reasons and leading/trailing whitespace
+            reason = reason.replace('+', '').strip()
 
             # Ensure reason is not empty
             if reason == "":
@@ -84,6 +86,12 @@ for index, row in retractions.iterrows():
                     retractions_by_category["Reliability"] = 1
                     added_to_categories.append("Reliability")
 
+        # Store the details for each retraction
+        retractions_with_details[row['Record ID']] = {
+            'Reason': row['Reason'],
+            'Categories': added_to_categories
+        }
+
 # Print the dictionary
 print(retractions_by_category)
 
@@ -110,3 +118,11 @@ with open('new_retractions_by_category.csv', 'w') as file:
     writer.writerow(['Category', 'Retractions'])
     for category, retractions in retractions_by_category.items():
         writer.writerow([category, retractions])
+
+# Save the details for each retraction
+retractions_with_details_df = pd.DataFrame(retractions_with_details).T
+
+retractions_with_details_df.to_csv('retractions_with_details_on_category.csv')
+
+# Print the details for each retraction
+print(retractions_with_details_df)

@@ -107,7 +107,7 @@ Updated to Correction,4
 Complaints about Company/Institution,4
 Sabotage of Materials,1"""
 
-reliability = ["Bias", "Randomly", "Error in Data", "Falsification/Fabrication", "Results", "Unreliable", "Concerns/Issues About Image", "Error in Image", "Error by Third Party", "Error in Analyses", "Error in Cell Lines/Tissues", "Error in Data", "Contamination", "Materials", "Error in Text", "Methods", "Cites Retracted", "Contamination", "Original Data not Provided", "Sabotage", "Concerns/Issues About Data", "Manipulation", "Peer Review", "Paper Mill", "Hoax Paper"]
+reliability = ["Bias", "Randomly", "Error in Data", "Falsification/Fabrication", "Results", "Unreliable", "Concerns/Issues About Image", "Error in Image", "Error by Third Party", "Error in Analyses", "Error in Cell Lines/Tissues", "Error in Data", "Contamination", "Materials", "Error in Text", "Methods", "Cites Retracted", "Contamination", "Original Data not Provided", "Sabotage", "Concerns/Issues About Data", "Manipulation", "Peer Review", "Paper Mill", "Hoax Paper", "Retract and Replace", "Updated to Retraction", "False/Forged Authorship"]
 
 # Create a dictionary to store the number of retractions by reason
 retractions_by_reason = {}
