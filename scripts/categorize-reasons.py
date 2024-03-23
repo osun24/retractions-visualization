@@ -36,7 +36,7 @@ def check_for_reliability(reason):
 # Ensures that a retraction is only counted once in a category but allows for multiple categories
 
 # Read the data
-retractions = pd.read_csv('retractions.csv', encoding='ISO-8859-1')
+retractions = pd.read_csv('raw_data/retractions.csv', encoding='ISO-8859-1')
 
 # Create a dictionary to store the number of retractions by category
 retractions_by_category = {}

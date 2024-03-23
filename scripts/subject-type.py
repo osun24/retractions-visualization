@@ -6,7 +6,7 @@ import csv
 retractions_by_subject = {}
 
 # Open the file
-with open('retractions_by_subject.csv', 'r', encoding='ISO-8859-1') as file:
+with open('raw_data/retractions_by_subject.csv', 'r', encoding='ISO-8859-1') as file:
     reader = csv.DictReader(file)
     
     # Loop through the rows of the file

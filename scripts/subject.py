@@ -3,7 +3,7 @@
 import csv
 
 # Open the file
-with open('retractions.csv', 'r', encoding='ISO-8859-1') as file:
+with open('rraw_data/etractions.csv', 'r', encoding='ISO-8859-1') as file:
     reader = csv.DictReader(file)
     
     # Create a dictionary to store the number of retractions by subject
